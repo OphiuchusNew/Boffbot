@@ -15,13 +15,11 @@ var weGetItCount = 0;
 
 bot.on('message', function(msg){
 	var chatId = msg.chat.id;
-	var text = msg.text;
-	var sticker = msg.sticker;
-	text = text.toLowerCase();
 	var resp = "whatever";
 	console.log(JSON.stringify(msg, null, 2));
 
-	if (text.includes("nigger")){
+	if (msg === msg.text){
+		if (text.includes("nigger")){
 		resp = "Don't say that you cis misgendering culturally appropriating scumbag that doesn't deserve to live on this liberal all-loving planet";
 		nigCount = nigCount + 1;
 		nigCountOut = "Nigger Count: " + nigCount;
@@ -126,6 +124,13 @@ bot.on('message', function(msg){
 	else if (text.includes("goofy")){
 		bot.sendSticker(chatId, 'BQADAwADNwEAAmzJGgjacDYAAWxJcZ0C');
 	}
+	}
+
+	if (msg ===msg.sticker){
+		bot.getUpdates();
+		bot.sendSticker(chatId, 'BQADAwADNwEAAmzJGgjacDYAAWxJcZ0C');
+	}
+	
 
 
 
